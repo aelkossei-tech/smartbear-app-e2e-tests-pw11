@@ -1,0 +1,23 @@
+
+1. Create a new folder and name it properly 
+    smartbear-app-e2e-tests-pw11
+
+   - if using CLI -->  mkdir smartbear-app-e2e-tests-pw11 
+
+2. Start an NPM project w/ playwright 
+    npm init playwright@latest 
+
+   - Select default details 
+
+3. Install Playwright browsers 
+    npx playwright install 
+
+.github/workflows/playwright.yml 
+
+4. Install dotenv dependency for setting up environment variables 
+    npm i dotenv -D
+
+    - create .env file
+    - store your key-value pairs/properties 
+    - enable .env in config file in use {}
+        - EX: baseURL: process.env.baseURL

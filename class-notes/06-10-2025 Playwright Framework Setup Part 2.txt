@@ -1,0 +1,13 @@
+* From now on --> sell yourself and your wealth of knowledge 
+    - You should be able to talk about Playwright for an extended amount of time when asked during an interview 
+        - Snapshot testing + config file (more powerful than the interviewer knows) + visual regression testing 
+    - Have an empty Playwright/Cypress project --> to showcase your knowledge
+        - do a demo 
+    - Post --> how to set up different dependencies for projects [snappify website]
+
+RECAP: 
+    - We downloaded dotenv dependency
+    - baseURL + loginURL --> to properly test the features on each with auth. 
+    - configs ==> enabled imports from dotenv + globalSetups [testDirectory to reporter]
+        - reporter --> JUnit (for pipelines) + HTML (for local & pipelines)
+    
