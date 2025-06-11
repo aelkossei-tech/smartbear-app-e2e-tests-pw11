@@ -23,14 +23,14 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? undefined : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [ 
-    ['html', { open: 'never' }],
-    ['list'], 
-    ['junit', { outputFile: 'junitReports/reports.xml'}]
-  ], 
+  reporter: [
+    ['html', { open: 'never'}],
+    ['list'],
+    ['junit', { outputFile: 'junitReports/reports.xml'}],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: true, // should be pushed into GitHub as true 
+    headless: process.env.CI ? true : false,
     /* Base URL to use in actions like `await page.goto('/')`. */
     //baseURL: process.env.baseURL,
 
@@ -46,8 +46,8 @@ export default defineConfig({
       dependencies: ['SmartBear Setup Tests'],
       use: { 
         ...devices['Desktop Chrome'],
-        baseURL: process.env.baseURL, 
-        storageState: './auth/smartlogin.json'
+        baseURL: process.env.baseURL,
+        storageState: './auth/smartlogin.json' 
       },
     },
 
@@ -63,11 +63,11 @@ export default defineConfig({
     {
       name: 'SmartBear Login Tests',
       testDir: './tests/login-tests',
-      use: {
+      use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.loginURL
-      },
-    },
+       },
+    }
 
     // {
     //   name: 'SmartBear Tests - Firefox',
