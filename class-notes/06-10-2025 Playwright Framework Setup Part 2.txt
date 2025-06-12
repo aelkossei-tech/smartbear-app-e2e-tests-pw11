@@ -11,3 +11,4 @@ RECAP:
     - configs ==> enabled imports from dotenv + globalSetups [testDirectory to reporter]
         - reporter --> JUnit (for pipelines) + HTML (for local & pipelines)
     
+    ** How to run projects at the same time? ** 

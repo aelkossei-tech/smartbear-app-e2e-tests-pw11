@@ -43,7 +43,7 @@ export default defineConfig({
     {
       name: 'SmartBear E2E Tests - Chrome',
       testDir: './tests/e2e-tests',
-      dependencies: ['SmartBear Setup Tests'],
+      dependencies: ['SmartBear Setup Tests'], // if there's an auth smartlogin.json file, then move on + else create one 
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: process.env.baseURL,
